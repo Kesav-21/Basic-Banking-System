@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction</title>
     <style>
-    table, th, td {
+    table,th,td{
         border: 1px ridge;
         margin:35px auto;
         border-collapse: collapse;
     }
     th{
         height:50px;
-        padding: 15px;
+        padding: 10px;
+        width: 20%;
+        background-color:#cfcdcc
+
     }
     td{
         height:15px;
@@ -36,6 +39,11 @@
         background-color: #A569BD;
         cursor: pointer;
     }
+    @media screen and (max-width:768px) {
+        table{
+            width: 100%;
+        }        
+    }
     </style>
 </head>
 <body style="background: rgb(240,229,226);
@@ -47,11 +55,11 @@ background: linear-gradient(90deg, rgba(240,229,226,1) 0%, rgba(209,187,170,1) 3
     <div>
         <table style="width:80%">
             <thead>
-                <th style="width:20%; background-color:#cfcdcc">Customer ID</th>
-                <th style="width:20%; background-color:#cfcdcc">Name</th>
-                <th style="width:20%; background-color:#cfcdcc">Email</th>
-                <th style="width:20%; background-color:#cfcdcc">Balance</th>
-                <th style="width:20%; background-color:#cfcdcc">Operation</th>
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Balance</th>
+                <th>Operation</th>
             </thead>
             <tbody>
             <?php

@@ -68,7 +68,7 @@ if(isset($_POST['submit']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction</title>
 <style>
-    table, th, td {
+    table {
         border: 1px ridge;
         margin:15px auto;
         border-collapse: collapse;
@@ -76,6 +76,8 @@ if(isset($_POST['submit']))
     th{
         height:50px;
         padding: 15px;
+        width:20%;
+        background-color:#cfcdcc;
     }
     td{
         height:25px;
@@ -130,16 +132,16 @@ background: linear-gradient(90deg, rgba(240,229,226,1) 0%, rgba(209,187,170,1) 3
         <div>
             <table>
                 <tr style="color : black;">
-                    <th style="width:20%; background-color:#cfcdcc">Id</th>
-                    <th style="width:20%; background-color:#cfcdcc">Name</th>
-                    <th style="width:20%; background-color:#cfcdcc">Email</th>
-                    <th style="width:20%; background-color:#cfcdcc">Balance</th>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Balance</th>
                 </tr>
                 <tr style="color : black;">
-                    <td ><?php echo $rows['CustID'] ?></td>
-                    <td ><?php echo $rows['Name'] ?></td>
-                    <td ><?php echo $rows['Email'] ?></td>
-                    <td ><?php echo $rows['Balance'] ?></td>
+                    <td><?php echo $rows['CustID'] ?></td>
+                    <td><?php echo $rows['Name'] ?></td>
+                    <td><?php echo $rows['Email'] ?></td>
+                    <td><?php echo $rows['Balance'] ?></td>
                 </tr>
             </table>
         </div>
