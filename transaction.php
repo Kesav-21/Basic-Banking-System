@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction</title>
     <style>
+
     table,th,td{
         border: 1px ridge;
         margin:35px auto;
         border-collapse: collapse;
+        width: 80%;
     }
     th{
         height:50px;
-        padding: 10px;
+        padding: 20px;
         width: 20%;
         background-color:#cfcdcc
-
     }
     td{
         height:15px;
@@ -25,7 +26,7 @@
         font-family: 'Courier New', Courier, monospace;
     }
     tr:nth-child(even) {
-  background-color: #D6EEEE;
+        background-color: #D6EEEE;
     }
     .btn{
         background-color : white;
@@ -41,7 +42,10 @@
     }
     @media screen and (max-width:768px) {
         table{
-            width: 100%;
+            display: block;
+            width: 90%;
+            height: 80vh;
+            overflow: scroll;
         }        
     }
     </style>
@@ -53,7 +57,7 @@ background: linear-gradient(90deg, rgba(240,229,226,1) 0%, rgba(209,187,170,1) 3
     ?>
     <h2 style="text-align:center">Transaction</h2>
     <div>
-        <table style="width:80%">
+        <table>
             <thead>
                 <th>Customer ID</th>
                 <th>Name</th>

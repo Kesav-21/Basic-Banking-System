@@ -105,6 +105,38 @@ if(isset($_POST['submit']))
     .forms{
         margin:0px 5px;
     }
+    .tran-opt{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .tran-opt > select{
+        display:block;
+        width:100%;
+        border:1px solid green;
+        border-radius:5px;
+        padding:10px;
+    }
+    .tran-opt > input{
+        display:block;
+        width:100%;
+        border:1px solid green;
+        border-radius:5px; 
+        padding:10px;
+    }
+    @media screen and (max-width:768px){
+        table{
+            width: 90%;
+            display: block;
+            height: 15vh;
+            overflow: scroll;
+        }
+        .tran-opt{
+            width: 90%;
+        }
+    }
     </style>
 </head>
 
@@ -146,9 +178,10 @@ background: linear-gradient(90deg, rgba(240,229,226,1) 0%, rgba(209,187,170,1) 3
             </table>
         </div>
         <br><br><br>
-        <div style="margin:0px 250px;">
+        <div class="sel-section">
+        <section class="tran-opt">
         <label style="color : black; font-size:20px"><b>Transfer To:</b></label>
-        <select style="display:block; width:100%; border:1px solid green;border-radius:5px;padding:10px;" name="to" class="form-control" required>
+        <select name="to" class="form-control" required>
             <option value="" disabled selected>Choose</option>
             <?php
                 include 'connection.php';
@@ -161,21 +194,22 @@ background: linear-gradient(90deg, rgba(240,229,226,1) 0%, rgba(209,187,170,1) 3
                 }
                 while($rows = mysqli_fetch_assoc($result)) {
             ?>
-                <option style="background-color:pink; font-size:20px; color:blueviolet;" value="<?php echo $rows['CustID'];?>" >
-                
+                <option value="<?php echo $rows['CustID'];?>" >
                     <?php echo $rows['Name'] ;?> (Balance: 
                     <?php echo $rows['Balance'] ;?> ) 
-               
                 </option>
             <?php 
                 } 
             ?>
             </select>
+            </section>
         <br>
         <br>
+        <section class="tran-opt">
             <label style="color : black; font-size:20px"><b>Amount:</b></label>
-            <input style="display:block; width:98%; border:1px solid green;border-radius:5px; padding:10px;" type="number" class="form-control" name="amount" required>   
+            <input type="number" class="form-control" name="amount" required>   
             <br><br>
+        </section>
                 <div class="text-center" >
             <button class="btn" name="submit" type="submit" id="myBtn" >Transfer</button>
             </div>

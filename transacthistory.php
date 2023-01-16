@@ -13,6 +13,8 @@
     th{
         height:50px;
         padding: 15px;
+        width:20%;
+        background-color:#cfcdcc;
     }
     td{
         height:25px;
@@ -22,6 +24,14 @@
     }
     tr:nth-child(even) {
   background-color: #D6EEEE;
+    }
+    @media screen and (max-width:768px) {
+        table{
+            display: block;
+            width: 90%;
+            height: 50vh;
+            overflow: scroll;
+        }        
     }
     </style>
 </head>
@@ -39,26 +49,21 @@ background: linear-gradient(90deg, rgba(240,229,226,1) 0%, rgba(209,187,170,1) 3
     <table>
         <thead style="color : black;">
             <tr>
-                <th style="width:20%; background-color:#cfcdcc">S.No.</th>
-                <th style="width:20%; background-color:#cfcdcc">Sender</th>
-                <th style="width:20%; background-color:#cfcdcc">Receiver</th>
-                <th style="width:20%; background-color:#cfcdcc">Amount</th>
-                <th style="width:20%; background-color:#cfcdcc">Date & Time</th>
+                <th>S.No.</th>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Amount</th>
+                <th>Date & Time</th>
             </tr>
         </thead>
         <tbody>
         <?php
-
             include 'connection.php';
-
             $sql ="select * from transactions";
-
             $query =mysqli_query($con, $sql);
-
             while($rows = mysqli_fetch_assoc($query))
             {
         ?>
-
             <tr style="color : black;">
             <td><?php echo $rows['SNO']; ?></td>
             <td><?php echo $rows['Sender']; ?></td>
@@ -75,8 +80,8 @@ background: linear-gradient(90deg, rgba(240,229,226,1) 0%, rgba(209,187,170,1) 3
 
     </div>
 </div>
-<footer class="">
-            <p style="text-align:center">&copy 2022.<b>K7 BASIC BANK</b> <br> </p>
+<footer>
+    <p style="text-align:center">&copy 2022.<b>K7 BASIC BANK</b> <br> </p>
 </footer>
 </body>
 </html>
